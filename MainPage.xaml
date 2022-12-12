@@ -3,14 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.MainPage">
 
-        <VerticalStackLayout
-            Spacing="25"
+        <HorizontalStackLayout
+            Margin="10"
             Padding="30,0"
-            VerticalOptions="Center">
-
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            >
             
             
-            
-        </VerticalStackLayout>
+            <VerticalStackLayout Background="Red" WidthRequest="400" HeightRequest="400">
+                <BoxView WidthRequest="200" HeightRequest="200" Background="Blue" HorizontalOptions="Center" VerticalOptions="Center"> 
+                    <BoxView.GestureRecognizers>
+                        <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" TouchPoints="0"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Label Text="" x:Name="L" TextColor="Yellow"/>
+                <Label Text="" x:Name="O" TextColor="Yellow"/>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
 
 </ContentPage>
