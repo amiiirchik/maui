@@ -3,23 +3,112 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.MainPage">
 
-        <HorizontalStackLayout
-            Margin="10"
-            Padding="30,0"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            >
+
+
+    <Grid
+        ColumnSpacing="20"
+        RowSpacing="20"
+        Padding="30"
+        >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <BoxView Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
+            <BoxView.Color>
+                <Color>
+                    Green
+                </Color>
+            </BoxView.Color>
+        </BoxView>
+        <BoxView Grid.ColumnSpan="1" Grid.Column="2" Grid.Row="1">
+            <BoxView.Color>
+                <Color>
+                    Teal
+                </Color>
+            </BoxView.Color>
+        </BoxView>
+        <BoxView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <BoxView.Color>
+                <Color>
+                    LightPink
+                </Color>
+            </BoxView.Color>
+        </BoxView>
+        <BoxView Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1">
+            <BoxView.Color>
+                <Color>
+                    DarkRed
+                </Color>
+            </BoxView.Color>
+        </BoxView>
+        <BoxView Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2">
+            <BoxView.Color>
+                <Color x:FactoryMethod="FromRgb">
+                    <x:Arguments>
+                        <x:Byte>
+                            255    
+                        </x:Byte>
+                        <x:Byte>
+                            255
+                        </x:Byte>
+                        <x:Byte>
+                            255
+                        </x:Byte>
+                    </x:Arguments>
+                </Color>
+            </BoxView.Color>
+        </BoxView>
+    </Grid>
+
+    <!--<VerticalStackLayout  Background="Black" VerticalOptions="Start" Margin="10">
+            <VerticalStackLayout.HeightRequest>
+                <x:Double>
+                    100
+                </x:Double>
+            </VerticalStackLayout.HeightRequest>
+            <VerticalStackLayout.WidthRequest>
+                <x:Double>
+                    340
+                </x:Double>
+            </VerticalStackLayout.WidthRequest>
+            
+            <VerticalStackLayout Background="Yellow" Margin="110">
+                <VerticalStackLayout.HeightRequest>
+                    <x:Double>
+                        100
+                    </x:Double>
+                </VerticalStackLayout.HeightRequest>
+                <VerticalStackLayout.WidthRequest>
+                    <x:Double>
+                        170
+                    </x:Double>
+                </VerticalStackLayout.WidthRequest>
+            </VerticalStackLayout>
+            
+
+
+        </VerticalStackLayout>-->
             
             
-            <VerticalStackLayout Background="Red" WidthRequest="400" HeightRequest="400">
+            
+            
+            <!--<VerticalStackLayout Background="Red" WidthRequest="400" HeightRequest="400">
                 <BoxView WidthRequest="200" HeightRequest="200" Background="Blue" HorizontalOptions="Center" VerticalOptions="Center"> 
                     <BoxView.GestureRecognizers>
                         <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" TouchPoints="0"/>
                     </BoxView.GestureRecognizers>
                 </BoxView>
-                <Label Text="" x:Name="L" TextColor="Yellow"/>
-                <Label Text="" x:Name="O" TextColor="Yellow"/>
-            </VerticalStackLayout>
-        </HorizontalStackLayout>
+                <Label Text="" x:Name="L" TextColor="Purple"/>
+            </VerticalStackLayout>-->
+        
+    
+    
 
 </ContentPage>
