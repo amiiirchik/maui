@@ -4,8 +4,32 @@
              x:Class="MauiApp1.MainPage">
 
 
+        <VerticalStackLayout>
+            <Label x:Name="l"/>
+            <HorizontalStackLayout>
+                <Button Command="{Binding CCommand}" CommandParameter="1" />
+                <Button Command="{Binding CCommand}" CommandParameter="2" />
+            <Button Command="{Binding CCommand}" CommandParameter="3" />
+            <Switch  Toggled="Switch_Toggled" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Button Command="{Binding CCommand}" CommandParameter="4" />
+                <Button Command="{Binding CCommand}" CommandParameter="5" />
+                <Button Command="{Binding CCommand}" CommandParameter="6" />
+                <Switch  Toggled="Switch_Toggled2" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Button Command="{Binding CCommand}" CommandParameter="7" />
+                <Button Command="{Binding CCommand}" CommandParameter="8" />
+                <Button Command="{Binding CCommand}" CommandParameter="9" />
+            <Switch Toggled="Switch_Toggled3" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    
 
-    <Grid
+
+
+    <!--<Grid
         ColumnSpacing="20"
         RowSpacing="20"
         Padding="30"
@@ -53,52 +77,22 @@
                 <Color x:FactoryMethod="FromRgb">
                     <x:Arguments>
                         <x:Byte>
-                            255    
-                        </x:Byte>
-                        <x:Byte>
                             255
                         </x:Byte>
                         <x:Byte>
                             255
+                        </x:Byte>
+                        <x:Byte>
+                            0
                         </x:Byte>
                     </x:Arguments>
                 </Color>
             </BoxView.Color>
         </BoxView>
-    </Grid>
-
-    <!--<VerticalStackLayout  Background="Black" VerticalOptions="Start" Margin="10">
-            <VerticalStackLayout.HeightRequest>
-                <x:Double>
-                    100
-                </x:Double>
-            </VerticalStackLayout.HeightRequest>
-            <VerticalStackLayout.WidthRequest>
-                <x:Double>
-                    340
-                </x:Double>
-            </VerticalStackLayout.WidthRequest>
-            
-            <VerticalStackLayout Background="Yellow" Margin="110">
-                <VerticalStackLayout.HeightRequest>
-                    <x:Double>
-                        100
-                    </x:Double>
-                </VerticalStackLayout.HeightRequest>
-                <VerticalStackLayout.WidthRequest>
-                    <x:Double>
-                        170
-                    </x:Double>
-                </VerticalStackLayout.WidthRequest>
-            </VerticalStackLayout>
-            
-
-
-        </VerticalStackLayout>-->
-            
-            
-            
-            
+    </Grid>-->
+    
+    
+           
             <!--<VerticalStackLayout Background="Red" WidthRequest="400" HeightRequest="400">
                 <BoxView WidthRequest="200" HeightRequest="200" Background="Blue" HorizontalOptions="Center" VerticalOptions="Center"> 
                     <BoxView.GestureRecognizers>

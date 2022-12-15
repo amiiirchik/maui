@@ -1,36 +1,68 @@
-﻿using Microsoft.Maui.Controls;
-using Microsoft.Maui.Graphics.Text;
+﻿using System.Windows.Input;
 
 namespace MauiApp1;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
+    public ICommand CCommand { private set; get; }
+
+    bool one;
+    bool two;
+    bool three;
+
+    public MainPage()
 	{
-		InitializeComponent();
-	}
+		
 
 
-	//private void PanGestureRecognizer_PanUpdated(object sender, PanUpdatedEventArgs e)
-	//{
-	//	L.Text = e.TotalX + " " + (e.TotalY * -1);
+        CCommand = new Command<string>(
+            execute: (string arg) =>
+            {
+                l.Text = $"Нажата кнопка: {arg}";
+            },
 
-	//	if (e.StatusType == GestureStatus.Running)
-	//	{
-	//		(sender as BoxView).TranslationX = e.TotalX;
-	//		(sender as BoxView).TranslationY = e.TotalY;
-	//		//(sender as BoxView).ScaleTo(e.TotalX / 100);
- //  //         (sender as BoxView).ScaleTo(e.TotalY / 100);
-	//		(sender as BoxView).ScaleX = e.TotalX / 100;
- //           (sender as BoxView).ScaleY = e.TotalY / 100;
- //       }
-	//	if (e.StatusType == GestureStatus.Completed)
-	//	{
-	//		(sender as BoxView).Color = Colors.Yellow;
-	//	}
-	//	else if (e.StatusType == GestureStatus.Running)
-	//	{
- //           (sender as BoxView).Color = Colors.Black;
- //       }
- //   }
+            canExecute: (string arg) =>
+            {
+                return Check(Convert.ToInt32(arg));
+            }
+
+        );
+
+        BindingContext = this;
+        InitializeComponent();
+    }
+
+    private void Switch_Toggled(object sender, ToggledEventArgs e)
+    {
+        one = e.Value;
+        ((Command)CCommand).ChangeCanExecute();
+    }
+
+    private void Switch_Toggled2(object sender, ToggledEventArgs e)
+    {
+        two = e.Value;
+        ((Command)CCommand).ChangeCanExecute();
+    }
+
+    private void Switch_Toggled3(object sender, ToggledEventArgs e)
+    {
+        three = e.Value;
+        ((Command)CCommand).ChangeCanExecute();
+    }
+
+    public bool Check(int value)
+    {
+        if (value < 4)
+        {
+            return one;
+        }
+        else if (value >= 4 && value < 7)
+        {
+            return two;
+        }
+        else
+        {
+            return three;
+        }
+    }
 }
